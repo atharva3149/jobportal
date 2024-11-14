@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+// this to create a job by admin
 const jobSchema = new mongoose.Schema({
     title: {
         type: String,

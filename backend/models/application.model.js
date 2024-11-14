@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+// this is for application in backend panel of admin
 const applicationSchema = new mongoose.Schema({
     job:{
         type:mongoose.Schema.Types.ObjectId,

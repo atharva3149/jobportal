@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+// this for admin panel
 const userSchema = new mongoose.Schema({
     fullname: {
         type: String,

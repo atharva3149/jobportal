@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+// this is for admin panel to insert company data 
 const companySchema = new mongoose.Schema({
     name:{
         type:String,
