@@ -70,7 +70,8 @@ export const getAppliedJobs = async (req,res) => {
         console.log(error);
     }
 }
-// admin dekhega kitna user ne apply kiya hai
+
+//admim can see the applicants
 export const getApplicants = async (req,res) => {
     try {
         const jobId = req.params.id;

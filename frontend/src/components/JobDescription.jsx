@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
@@ -7,8 +9,11 @@ import { APPLICATION_API_END_POINT, JOB_API_END_POINT } from '@/utils/constant';
 import { setSingleJob } from '@/redux/jobSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
+import { useNavigate } from "react-router-dom";
+
 
 const JobDescription = () => {
+    const navigate = useNavigate();
     const {singleJob} = useSelector(store => store.job);
     const {user} = useSelector(store=>store.auth);
     const isIntiallyApplied = singleJob?.applications?.some(application => application.applicant === user?._id) || false;
@@ -67,6 +72,7 @@ const JobDescription = () => {
                     className={`rounded-lg ${isApplied ? 'bg-gray-600 cursor-not-allowed' : 'bg-[#7209b7] hover:bg-[#5f32ad]'}`}>
                     {isApplied ? 'Already Applied' : 'Apply Now'}
                 </Button>
+                
             </div>
             <h1 className='border-b-2 border-b-gray-300 font-medium py-4'>Job Description</h1>
             <div className='my-4'>
@@ -79,7 +85,10 @@ const JobDescription = () => {
                 <h1 className='font-bold my-1'>Posted Date: <span className='pl-4 font-normal text-gray-800'>{singleJob?.createdAt.split("T")[0]}</span></h1>
             </div>
              <div className='mt-6'>
-                
+             <div className='flex items-center gap-2 my-10'>
+                    <Button variant="outline"   className={`rounded-lg ${isApplied ? 'bg-gray-600 cursor-not-allowed' : 'bg-[#7209b7] hover:bg-[#5f32ad]'}`} onClick={() => navigate("/browse")}>Cancel</Button>
+                    
+                </div>
             </div>
         </div>
     )
