@@ -13,3 +13,4 @@ const applicationSlice = createSlice({
 });
 export const {setAllApplicants} = applicationSlice.actions;
 export default applicationSlice.reducer;
+
